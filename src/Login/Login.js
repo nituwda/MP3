@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import "./Login.css";
 
 export default function LandingMessage() {
-  const [register, setRegister] = useState(false);
+  const [register, setRegister] = useState({
+    email: "",
+    password: "",
+  });
   const signup = () => {
     setRegister(true);
   };
@@ -18,19 +21,26 @@ export default function LandingMessage() {
           <h1> Welcome </h1>
           <p> Welcome back! We missed you... </p>
           <p>Please login to your account now. </p>
+
           <form className="login-form">
-            <input type="text" placeholder="Email" />
-            <input type="Password" placeholder="Password" />
+            <input type="text" placeholder="Email" register={register.email} />
+            
+            <input type="Password" placeholder="Password" register={register.password} />
+            
             <button type="submit" className="log-in">
+              
               log in
             </button>
           </form>
+
           <hr />
+
           <p> You don't have an account yet? </p>
           <button type="submit" className="sign-up" onClick={signup}>
             register
           </button>
         </div>
+
       ) : (
         <div>
           <h1> Welcome </h1>
