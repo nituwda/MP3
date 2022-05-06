@@ -10,6 +10,7 @@ export default function LandingMessage() {
   });
 
   const [signUp, setSignUp] = useState(false)
+  const [valid, setValid] = useState(false);
 
 
   // const signup = () => {
@@ -38,6 +39,9 @@ export default function LandingMessage() {
 
   const handleSignUpChange = (e) => {
     e.preventDefault();
+    if (register.firstName && register.lastName && register.email && register.password) {
+      setValid(true);
+    }
     setSignUp(true);
   }
 
@@ -75,21 +79,28 @@ export default function LandingMessage() {
       ) : (
         <div>
           {/* register */}
-          {signUp ? <div className="success-message"> Registration Successful </div>: null } 
+          {signUp && valid ? <div className="success-message"> Registration Successful </div>: null } 
           <h1> Welcome </h1>
           <p> You don't have an account yet? </p>
           <p> Let's create now! </p>
           <form className="reg-form" onSubmit={handleSignUpChange}>
             <input type="text" placeholder="First Name" value={register.firstName} 
             onChange={handleFirstNameChange}/>
-            <span></span>
+            {signUp && !register.firstName? <p id="first-name-error"> Please enter your first name</p>:null}
+            
             <input type="text" placeholder="Last Name" value={register.lastName}
             onChange={handleLastNameChange}/>
+            {signUp && !register.lastName? <p id="last-name-error"> Please enter your last name</p>:null}
+            
             <input type="email" placeholder="Email" className="input" value={register.email}
             onChange={handleEmailChange} />
+            {signUp && !register.email? <p id="email-error"> Please enter your email</p>:null}
+            
             <input type="Password" placeholder="Password" className="input" value={register.password}
             onChange={handlePasswordChange} />
             <br />
+            {signUp && !register.password? <p id="password-error"> Please enter your password</p>:null}
+            
             <button type="submit" className="sign-up">
               register
             </button>
