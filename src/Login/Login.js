@@ -45,6 +45,8 @@ export default function LandingMessage() {
     setSignUp(true);
   }
 
+
+
   // const handleEmail = (e) => {
   //   setRegister({...register, email:e.target.value});
   // };
@@ -85,21 +87,31 @@ export default function LandingMessage() {
           <p> Let's create now! </p>
           <form className="reg-form" onSubmit={handleSignUpChange}>
             <input type="text" placeholder="First Name" value={register.firstName} 
-            onChange={handleFirstNameChange}/>
+            onChange={handleFirstNameChange}
+            disabled={valid}/>
             {signUp && !register.firstName? <p id="first-name-error"> Please enter your first name</p>:null}
             
+            
             <input type="text" placeholder="Last Name" value={register.lastName}
-            onChange={handleLastNameChange}/>
+            onChange={handleLastNameChange}
+            disabled={valid}/>
             {signUp && !register.lastName? <p id="last-name-error"> Please enter your last name</p>:null}
             
+            
             <input type="email" placeholder="Email" className="input" value={register.email}
-            onChange={handleEmailChange} />
+            onChange={handleEmailChange}
+            disabled={valid} />
             {signUp && !register.email? <p id="email-error"> Please enter your email</p>:null}
             
+            
             <input type="Password" placeholder="Password" className="input" value={register.password}
-            onChange={handlePasswordChange} />
+            onChange={handlePasswordChange}
+            disabled={valid} />
             <br />
-            {signUp && !register.password? <p id="password-error"> Please enter your password</p>:null}
+            {signUp && !register.password? <p id="password-error"> Please enter your password</p> : null}
+            {/* {signUp && (register.password <4) <p id="password-error"> Password must be more than 4 characters </p>: null} */}
+            
+            
             
             <button type="submit" className="sign-up">
               register
