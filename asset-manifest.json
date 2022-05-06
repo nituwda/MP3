@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/MP3/static/css/main.c1f0a848.css",
+    "main.js": "/MP3/static/js/main.e2da47c5.js",
+    "static/js/787.e413e7cd.chunk.js": "/MP3/static/js/787.e413e7cd.chunk.js",
+    "static/media/large-bulb.jpg": "/MP3/static/media/large-bulb.56e19ffdbf36de6efd26.jpg",
+    "index.html": "/MP3/index.html",
+    "main.c1f0a848.css.map": "/MP3/static/css/main.c1f0a848.css.map",
+    "main.e2da47c5.js.map": "/MP3/static/js/main.e2da47c5.js.map",
+    "787.e413e7cd.chunk.js.map": "/MP3/static/js/787.e413e7cd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c1f0a848.css",
+    "static/js/main.e2da47c5.js"
+  ]
+}
