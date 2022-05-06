@@ -1,0 +1,95 @@
+.container {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 10vh 0 10vh;
+  background: white;
+  border-radius: 20px;
+  margin: 20vh 60vh 20vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.login-form {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.login-form input {
+  width: 70%;
+  padding: 15px;
+  margin: 5vh 0 0;
+  font-family: Work Sans;
+  border-radius: 10px;
+  border: none;
+  background: #f2f2f2;
+}
+
+.log-in {
+  font-family: Work Sans;
+  margin-top: 5vh;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 20px;
+  border-color: #000000;
+  background: #ffffff;
+}
+
+.log-in:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+hr {
+  margin-top: 5vh;
+  width: 70%;
+}
+
+.sign-up {
+  font-family: Work Sans;
+  margin-top: 5vh;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 20px;
+  border-color: #000000;
+  background: #000000;
+  color: #ffffff;
+}
+
+.sign-up:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* .reg-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reg-form input {
+  width: 70%;
+  padding: 15px;
+  margin: 5vh 0 0;
+  font-family: Work Sans;
+  border-radius: 10px;
+  border: none;
+  background: #f2f2f2;
+} */
+
+.reg-form input {
+  padding: 15px;
+  margin: 5vh 0 0;
+  font-family: Work Sans;
+  border-radius: 10px;
+  border: none;
+  background: #f2f2f2;
+}
+
+.input {
+  width: 70%;
+}
+
+span {
+  margin-right: 23px;
+  margin-left: 23px;
+}
