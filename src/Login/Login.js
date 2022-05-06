@@ -10,6 +10,7 @@ export default function LandingMessage() {
   });
 
   const [signUp, setSignUp] = useState(false);
+  const [signIn, setSignIn] = useState(false);
   const [valid, setValid] = useState(false);
   const [enter, setEnter] = useState(false);
 
@@ -50,6 +51,18 @@ export default function LandingMessage() {
     setSignUp(true);
   };
 
+  const handleSignInChange = (e) => {
+    e.preventDefault();
+    if (
+      
+      register.email &&
+      register.password
+    ) {
+      setValid(true);
+    }
+    setSignIn(true);
+  };
+
   // const handleEmail = (e) => {
   //   setRegister({...register, email:e.target.value});
   // };
@@ -59,14 +72,37 @@ export default function LandingMessage() {
       {!register || enter ? (
         <div>
           <div>
+          {signIn && valid ? (
+            <div className="success-message">
+              Login Successful! Welcome
+            </div>
+          ) : null}
             <h1> Welcome </h1>
             <p> Welcome back! We missed you... </p>
             <p> Please login to your account now. </p>
 
-            <form className="login-form">
-              <input type="text" placeholder="Email" />
+            <form className="login-form" onSubmit={handleSignInChange}>
+              <input type="text" placeholder="Email" 
+              value={register.email}
+              onChange={handleEmailChange}
+              disabled={valid}
+              />
+              {signIn && !register.email ? (
+              <p id="email-error" className="error">
+                Please enter your email
+              </p>
+            ) : null}
 
-              <input type="Password" placeholder="Password" />
+              <input type="Password" placeholder="Password" 
+              value={register.password}
+              onChange={handlePasswordChange}
+              disabled={valid}
+              />
+              {signIn && !register.password ? (
+              <p id="password-error" className="error">
+                Please enter your password
+              </p>
+            ) : null}
 
               <button type="submit" className="log-in">
                 log in
