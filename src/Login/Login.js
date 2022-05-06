@@ -82,7 +82,7 @@ export default function LandingMessage() {
             <p> Please login to your account now. </p>
 
             <form className="login-form" onSubmit={handleSignInChange}>
-              <input type="text" placeholder="Email" 
+              <input type="email" placeholder="Email" 
               value={register.email}
               onChange={handleEmailChange}
               disabled={valid}
